@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="static/index.js" defer></script>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      .container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .controls-spacer {
+        width: 10rem;
+        display: block;
+      }
+
+      @media only screen and (max-width: 480px) {
+        .controls {
+          flex-wrap: wrap;
+        }
+
+        .controls-spacer {
+          display: none;
+        }
+      }
+    </style>
+    <title>CEID flash drive uploader</title>
+  </head>
+  <body>
+    <!-- center everything inside -->
+    <div class="container">
+      <!-- heading -->
+      <h1 style="text-align: center">CEID flash drive uploader</h1>
+      <!-- v-spacer -->
+      <div style="height: 50px"></div>
+      <!-- left right -->
+      <div class="controls">
+        <!-- left -->
+        <div style="width: 15rem">
+          <h2>1.</h2>
+          <h1>Plug in your flash drive</h1>
+          <span id="drive-found">Waiting for you...</span>
+        </div>
+        <!-- h-spacer -->
+        <div class="controls-spacer"></div>
+        <!-- right -->
+        <div style="width: 15rem; text-align: center">
+          <h2>2.</h2>
+          <h1>Upload a <code>.makerbot</code> file</h1>
+          <input type="file" id="file-input" disabled />
+        </div>
+      </div>
+      <!-- v-spacer -->
+      <div style="height: 100px"></div>
+      <!-- submit button -->
+      <button
+        disabled
+        id="file-submit"
+        type="button"
+        style="
+          padding: 1rem;
+          border-radius: 10px;
+          border: 1px solid grey;
+          cursor: pointer;
+        "
+      >
+        Save to drive
+      </button>
+    </div>
+  </body>
+</html>
